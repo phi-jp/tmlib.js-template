@@ -150,7 +150,10 @@ tm.define("GameScene", {
         this.app.popScene();
 
         // スコアを送信
-        gspread.post('test2', 'phi', score);
+        gspread.post('touchnum', {
+            score: score,
+            time: sec,
+        });
     },
     // リセット
     reset: function() {
